@@ -1,0 +1,19 @@
+name: 'OAT'
+description: 'This Github action helps build and analyse Open Harmony libraries'
+branding:
+  icon: award
+  color: red
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: Applib-Learning/tools
+        path: oat
+    - name: run oat
+      shell: cmd
+      id: main
+      working-directory: ${{ github.workspace }}
+      run: |
+        java -jar ${{ github.workspace }}\oat\oat\ohos_ossaudittool-1.0.jar -s .\ -r .\report.txt -n selfcheck
+        type report.txt
