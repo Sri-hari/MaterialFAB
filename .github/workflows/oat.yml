@@ -18,4 +18,4 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - id: main
-        uses: Applib-Learning/tools@v2.8
+        uses: Applib-Learning/tools@v1.10
